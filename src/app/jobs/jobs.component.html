@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="section1">
+    <div class="row">
+      <div class="col">
+        <!-- <h3 class="hero-caption">4536+ Jobs listed</h3> -->
+        <h1 class="hero-title">4536+ Jobs Available</h1>
+        <p class="hero-slogan">Easiest way to find a perfect job</p>
+
+        <button class="btn b2" routerLink="/post">Find Talent</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section2">
+    <div class="heading-row">
+      <h1 class="sec-heading">Job Listing</h1>
+      <div class="search">
+        <input [(ngModel)]="search" placeholder="Search" type="text" id="search" name="search" size="20"/>
+      </div>
+    </div>
+    <div class="row" *ngIf="jobs">
+      <div *ngFor="let data of jobs">
+        <div class="card" *ngIf="search === '' || data.title.toLowerCase().includes(search)">
+            <h3 class="hero-caption">{{data.title}}</h3>
+            <p>{{data.location}}</p>
+            <p>{{data.jobType}}</p>
+            
+            <button class="btn b1" [routerLink]="['/detail/' + data._id]">Apply Now</button>  
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="bac">
+    <h3>jobseeker</h3>
+    <!-- <button class="btn" routerLink="/insert-product" type="submit">Insert</button> -->
+  </div>
+  
+  <div class="container">
+      <table>
+      <tr>
+        <th>ID</th>
+        <th>STATUS</th>
+        <th>RESUME</th>
+        <th>ACTION</th>
+        <th>ACTION</th>
+      </tr>
+      <tr *ngFor="let list of product">
+        <td>{{list.jobId}}</td>
+        <td>{{list.status}}</td>
+        <td>{{list.resumeURL}}</td>
+        <td>{{list._id}}</td>
+        <!-- <td class="td-btn" [routerLink]="['/update-product/' + list._id]">Edit</td> -->
+        <td class="td-btn" (click)="onDelete(list._id)">Dalete</td>
+      </tr>
+    </table>
+  </div>
+  

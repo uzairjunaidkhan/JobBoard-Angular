@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="section1">
+        <h1 class="hero-title">Login</h1>
+    </div>
+  
+    <div class="section2">
+      
+      <div class="card">
+        <h3 class="hero-caption">Login</h3>
+
+        <p> Enter Login details to get access</p>
+        
+        <!-- <div class="row"> -->
+            <div class="search">
+                <input [(ngModel)]="loginData.email" placeholder="Email" type="email" id="email" name="email" />
+            </div>
+            <div class="search">
+               <input [(ngModel)]="loginData.password" placeholder="Password" type="password" id="password" name="password" size="20"/>
+            </div>
+        <!-- </div> -->
+        <p>Don't have an account? <b routerLink="/register"> SignUp </b></p>
+        <button class="btn b1" (click)="onSubmit()">Login</button>
+      </div>
+    </div>
+  </div>
+  

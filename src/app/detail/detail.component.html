@@ -1,0 +1,31 @@
+<div class="bac" *ngIf="noData == true">
+    <h3>ِNo Application's For This Job</h3>
+  </div>
+
+<div *ngIf="noData == false">
+
+  <div class="bac">
+    <h3>ِAPPLICATION'S</h3>
+  </div>
+
+  <div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>status</th>
+        <th>applicantId</th>
+        <th>resumeURL</th>
+        <th>ACTION</th>
+      </tr>
+      <tr *ngFor="let list of app">
+        <td>{{ list._id }}</td>
+        <td>{{ list.status }}</td>
+        <td>{{ list.applicantId }}</td>
+        <td>{{ list.resumeURL }}</td>
+
+        <td class="td-btn" (click)="onApproved(list._id)">Approved</td>
+        <td class="td-btn" (click)="onReject(list._id)">Reject</td>
+      </tr>
+    </table>
+  </div>
+</div>

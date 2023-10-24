@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jobBoard';
+  constructor(public _auth: AuthService, private apiService: ApiService) {}
+
+  logOut() {
+    this._auth.loggedOut();
+  }
+
+  isShow = false;
+  searchQuery = '';
+
+  toggleDivs() {
+    this.isShow = !this.isShow;
+  }
+  
 }

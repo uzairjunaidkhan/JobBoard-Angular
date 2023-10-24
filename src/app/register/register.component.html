@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="section1">
+    <h1 class="hero-title">Sign Up</h1>
+  </div>
+
+  <div class="section2">
+    <div class="card">
+      <h3 class="hero-caption">Sign Up</h3>
+
+      <p>Create your account to get full access</p>
+
+      <div class="row">
+        <div class="search">
+          <input [(ngModel)]="registerData.firstName" placeholder="First Name" type="text" id="firstName" name="email" />
+        </div>
+        <div class="search">
+          <input
+          [(ngModel)]="registerData.lastName"
+            placeholder="Last Name"
+            type="text"
+            id="LastName"
+            name="password"
+            size="20"
+          />
+        </div>
+      </div>
+      <select [(ngModel)]="registerData.role" name="category" id="category">
+        <option value="jobSeeker">jobSeeker</option>
+        <option value="employer">employer</option>
+      </select>
+      <div class="search">
+        <input *ngIf="registerData.role === 'employer'" placeholder="Company Name" type="text" id="Company" name="email" />
+      </div>
+      <div class="row">
+        <div class="search">
+          <input [(ngModel)]="registerData.email" placeholder="Email" type="email" id="email" name="email" />
+        </div>
+        <div class="search">
+          <input
+            [(ngModel)]="registerData.password"
+            placeholder="Password"
+            type="password"
+            id="password"
+            name="password"
+            size="20"
+          />
+        </div>
+      </div>
+      <p>Don't have an account? <b routerLink="/login">Login</b></p>
+      <button class="btn b1" (click)="onSubmit()">SignUp</button>
+    </div>
+  </div>
+</div>

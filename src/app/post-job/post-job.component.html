@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="section1">
+        <h1 class="hero-title">Post A Job</h1>  
+    </div>
+
+    <div class="section2">
+      
+      <div class="card">
+        <h3 class="hero-caption">Job Details</h3>
+
+        <div class="row">
+            <div class="search">
+                <input [(ngModel)]="data.title" placeholder="Job Title" type="text" id="text" name="email" />
+            </div>
+            
+            <select [(ngModel)]="data.jobType"  name="category" id="category">
+                <option  disabled selected>Job Type</option>
+                <option  value="On Site">On Site</option>
+                <option  value="Remote">Remote</option>
+              </select>
+        </div>
+        
+        <div class="row">
+            <div class="search">
+                <input [(ngModel)]="data.location" placeholder="Location" type="text" id="text" name="email" />
+            </div>
+           
+            <select [(ngModel)]="data.nature" name="category" id="category">
+                <option  disabled selected>Job Nature</option>
+                <option  value="Part-time">Part-time</option>
+                <option  value="Full-time">Full-time</option>
+              </select>
+        </div>
+        
+        <textarea [(ngModel)]="data.description" placeholder="Job Description" name="description" id="description" cols="30" rows="5"></textarea>
+
+        <button class="btn b1" (click)="onSubmit()">Save Job</button>
+      </div>
+    </div>
+  </div>
+  
